@@ -1,6 +1,4 @@
 # TestJenkinsPipeline
 
 
-TEST
-
-TEST
+TEST 2
