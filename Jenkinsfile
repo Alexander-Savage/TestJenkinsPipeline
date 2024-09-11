@@ -8,7 +8,10 @@ pipeline {
                     return env.GIT_BRANCH == 'origin/dev';
                 }
             }
-            /* steps{
+            steps{
+            	echo "Passed Dev"
+            }
+            /* 
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
@@ -24,7 +27,11 @@ pipeline {
                     return env.GIT_BRANCH == 'origin/sit';
                 }
             }
-            /* steps{
+            steps{
+            	echo "Passed Sit"
+            }
+            
+            /* 
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
@@ -40,7 +47,11 @@ pipeline {
                     return env.GIT_BRANCH == 'origin/uat';
                 }
             }
-            /* steps{
+            steps{
+            	echo "Passed Uat"
+            }
+            
+            /*
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
@@ -56,7 +67,10 @@ pipeline {
                     return env.GIT_BRANCH == 'origin/main';
                 }
             }
-            /* steps{
+            steps{
+            	echo "Passed Sit"
+            }
+            /*
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyProd', variable: 'secureKeyProd')]) {
                         echo "Start Clean and Package"
