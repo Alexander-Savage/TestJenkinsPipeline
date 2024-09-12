@@ -50,7 +50,7 @@ pipeline {
                 }
             }
         }
-        stage('Clean and Package-Prod'){
+        /* stage('Clean and Package-Prod'){
             when {
                 expression {
                     return env.GIT_BRANCH == 'origin/main';
@@ -65,6 +65,6 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
     }
 }
