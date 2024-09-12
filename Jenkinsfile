@@ -9,17 +9,14 @@ pipeline {
                 }
             }
             steps{
-            	echo "Passed Dev"
-            }
-            /* 
-                withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
+            	withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
                         sh """mvn clean package -Denv=DEV -Dford.secureKey=${secureKeyPreProd}"""
                         echo "End Clean and Package"
                     }
                 }
-            } */
+            }
         }
         stage('Clean and Package-Sit'){
             when {
