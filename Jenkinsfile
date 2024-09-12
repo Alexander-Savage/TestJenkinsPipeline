@@ -12,7 +12,7 @@ pipeline {
             	withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
-                        sh """mvn clean package -Denv=DEV -Dford.secureKey=${secureKeyPreProd}"""
+                        sh """mvn clean package"""
                         echo "End Clean and Package"
                     }
                 }
@@ -28,7 +28,7 @@ pipeline {
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
-                        sh """mvn clean package -Denv=SIT -Dford.secureKey=${secureKeyPreProd}"""
+                        sh """mvn clean package"""
                         echo "End Clean and Package"
                     }
                 }
@@ -44,7 +44,7 @@ pipeline {
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
-                        sh """mvn clean package -Denv=UAT -Dford.secureKey=${secureKeyPreProd}"""
+                        sh """mvn clean package"""
                         echo "End Clean and Package"
                     }
                 }
