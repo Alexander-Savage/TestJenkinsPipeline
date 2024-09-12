@@ -44,19 +44,5 @@ pipeline {
                 }
             }
         }
-        /* stage('Clean and Package-Prod'){
-            when {
-                expression {
-                    return env.GIT_BRANCH == 'origin/main';
-                }
-            }
-            steps{
-                withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
-                        echo "Start Clean and Package"
-                        sh """mvn clean package -Denv=PROD -Dford.secureKey=${secureKeyProd}"""
-                        echo "End Clean and Package"
-                }
-            }
-        } */
     }
 }
