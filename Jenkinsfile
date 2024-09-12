@@ -25,10 +25,6 @@ pipeline {
                 }
             }
             steps{
-            	echo "Passed Sit"
-            }
-            
-            /* 
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
@@ -36,7 +32,7 @@ pipeline {
                         echo "End Clean and Package"
                     }
                 }
-            } */
+            }
         }
         stage('Clean and Package-Uat'){
             when {
@@ -45,10 +41,6 @@ pipeline {
                 }
             }
             steps{
-            	echo "Passed Uat"
-            }
-            
-            /*
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyPreProd', variable: 'secureKeyPreProd')]) {
                         echo "Start Clean and Package"
@@ -56,7 +48,7 @@ pipeline {
                         echo "End Clean and Package"
                     }
                 }
-            } */
+            }
         }
         stage('Clean and Package-Prod'){
             when {
@@ -65,9 +57,6 @@ pipeline {
                 }
             }
             steps{
-            	echo "Passed Sit"
-            }
-            /*
                 withMaven(maven: 'MAVEN_HOME', mavenSettingsFilePath: 'settings.xml') {
                     withCredentials([string(credentialsId: 'secureKeyProd', variable: 'secureKeyProd')]) {
                         echo "Start Clean and Package"
@@ -75,7 +64,7 @@ pipeline {
                         echo "End Clean and Package"
                     }
                 }
-            } */
+            }
         }
     }
 }
